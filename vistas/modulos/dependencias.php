@@ -1,35 +1,41 @@
-<!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Gestion de roles</h1>
-            <h3 style="font-size: 12px;">Administre y controle los roles registrados en el sistema</h3>
+            <h1>Dependencias</h1>
+            <p>Lista de dependencias</p>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <button class="btn btn-primary w-100" type="submit">Nuevo rol</button>
-            </ol>
+              <li class="breadcrumb-item"><a href="dependenciasForm"><button type="button" class="btn btn-block bg-gradient-primary">Nueva Dependencia
+              </button></a></li>
+              <!-- <li class="breadcrumb-item active">Inicio</li> -->
+            </ol> 
           </div>
         </div>
-      </div>
+      </div><!-- /.container-fluid -->
     </section>
 
-    <!-- Main content -->
-      <div class="card">
 
+    <!-- Main content -->
+    <section class="content">
+ <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>TIPO DE ROL</th>
-                    <th>ESTADOS</th>
-                    <th>ACCIONES</th>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -454,6 +460,8 @@
               </div>
               <!-- /.card-body -->
             </div>
+        <!-- NUESTRO CONTENIDO -->
+
     </section>
     <!-- /.content -->
   </div>

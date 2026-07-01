@@ -51,7 +51,7 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                              <a href="roles_permisos" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Roles y permisos</p>
                               </a>
@@ -62,7 +62,7 @@
                   <!-- ******************************* DEPENDENCIAS ******************************* -->
 
                   <li class="nav-item">
-                      <a href="../widgets.html" class="nav-link">
+                      <a href="dependencias" class="nav-link">
                           <i class="nav-icon fas fa-building"></i>
                           <p>
                               Dependencias
@@ -73,7 +73,7 @@
                   <!-- ******************************* RADICACION ******************************* -->
 
                   <li class="nav-item">
-                      <a href="../widgets.html" class="nav-link">
+                      <a href="radicacion" class="nav-link">
                           <i class="nav-icon fas fa-file"></i>
                           <p>
                               Radicación
@@ -93,21 +93,21 @@
 
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
-                              <a href="../layout/top-nav.html" class="nav-link">
+                              <a href="consulta_seguimiento" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Consulta y seguimiento</p>
                               </a>
                           </li>
 
                           <li class="nav-item">
-                              <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                              <a href="series" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Series documentales</p>
                               </a>
                           </li>
 
                           <li class="nav-item">
-                              <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                              <a href="subseries" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Subseries documentales</p>
                               </a>
@@ -119,7 +119,7 @@
                   <!-- ******************************* TRAMITES ******************************* -->
 
                   <li class="nav-item">
-                      <a href="../widgets.html" class="nav-link">
+                      <a href="gestion_tramites" class="nav-link">
                           <i class="nav-icon fas fa-handshake"></i>
                           <p>
                               Gestión de trámites
@@ -130,7 +130,7 @@
                   <!-- ******************************* REPORTES ******************************* -->
 
                   <li class="nav-item">
-                      <a href="../widgets.html" class="nav-link">
+                      <a href="reportes" class="nav-link">
                           <i class="nav-icon fas fa-chart-bar"></i>
                           <p>
                               Reportes y estadísticas

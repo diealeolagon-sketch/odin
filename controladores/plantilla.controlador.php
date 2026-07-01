@@ -2,8 +2,11 @@
 
 class ControladorPlantilla{
 
-    public function ctrTraerPlantilla(){
-        include "vistas/plantilla.php";
-    }
 
-} //fin Controladorplantilla
+public function ctrTraerPlantilla(){
+    
+    include "vistas/plantilla.php";
+
+}
+
+}//Fin controlador plantilla
