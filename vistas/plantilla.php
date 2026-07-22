@@ -84,6 +84,9 @@
 <script src="vistas/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="vistas/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> 
+<!-- SweetAlert2 para notificaciones -->
+<script src="vistas/plugins/sweetalert2/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="vistas/plugins/sweetalert2/sweetalert2.min.css">
 
 
 <script>
@@ -95,6 +98,8 @@
 
   });
 </script>
+
+<script src="js/radicacion.js"></script>/script></script>
 
 
 
