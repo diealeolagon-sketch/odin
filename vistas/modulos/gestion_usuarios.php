@@ -112,6 +112,11 @@
                     <th>Acciones</th>
                   </tr>
                 </thead>
+                <?php 
+                  $respuesta = ControladorUsuarios::ctrMostrarUsuarios();
+                  var_dump($respuesta);
+                
+                ?>
                 <tbody>
                   <tr>
                     <td>1</td>
