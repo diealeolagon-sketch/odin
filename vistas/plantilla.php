@@ -90,6 +90,8 @@
 <script src="vistas/plugins/sweetalert2/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="vistas/plugins/sweetalert2/sweetalert2.min.css">
 
+<script src="vistas/js/usuarios.js"></script>  
+
 
 <script>
   $(function () {
