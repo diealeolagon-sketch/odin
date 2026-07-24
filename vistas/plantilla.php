@@ -45,7 +45,8 @@
                 $_GET["ruta"]=="gestion_tramites" ||
                 $_GET["ruta"]=="reportes" ||
                 $_GET["ruta"]=="roles_permisosForm" ||
-                $_GET["ruta"]=="dependenciasForm"
+                $_GET["ruta"]=="dependenciasForm" ||
+                $_GET["ruta"]=="permisos" 
 
             ){
                 include "modulos/".$_GET["ruta"].".php";
