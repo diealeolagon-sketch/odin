@@ -43,7 +43,9 @@
                 $_GET["ruta"]=="series_documentales" ||
                 $_GET["ruta"]=="subseries_documentales" ||
                 $_GET["ruta"]=="gestion_tramites" ||
-                $_GET["ruta"]=="reportes"
+                $_GET["ruta"]=="reportes" ||
+                $_GET["ruta"]=="roles_permisosForm" ||
+                $_GET["ruta"]=="dependenciasForm"
 
             ){
                 include "modulos/".$_GET["ruta"].".php";
