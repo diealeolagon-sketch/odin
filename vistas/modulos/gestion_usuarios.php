@@ -112,292 +112,39 @@
                     <th>Acciones</th>
                   </tr>
                 </thead>
+                <tbody>
                 <?php 
                   $respuesta = ControladorUsuarios::ctrMostrarUsuarios();
-                  var_dump($respuesta);
+                  // var_dump($respuesta);
                 
+                  foreach ($respuesta as $usuario) {
+                    
+                    echo "<tr>";
+                      echo "<td>".$usuario['id_usuario']."</td>";
+                      echo "<td>".$usuario['nombre']."</td>";
+                      echo "<td>".$usuario['num_identificacion']."</td>";
+                      echo "<td>".$usuario['rol']."</td>";
+                      echo "<td>".$usuario['dependencia']."</td>";
+                      echo "<td>";
+                      //boton de estado activo o inactivo
+                      if ($usuario['estado'] == "ACTIVO") {
+                        echo "<button class='btn btn-xs btn-success btnActivarUsuario' data-estadoUsuario = 'Inactivo' data-idUsuario='".$usuario['id_usuario']."'>Activo</button>";
+                      }else{
+                        echo "<button class='btn btn-xs btn-danger btnActivarUsuario' data-estadoUsuario = 'Activo' data-idUsuario='".$usuario['id_usuario']."'>Inactivo</button>";                        
+                      }
+
+                      echo "</td>";
+                      echo "<td>";
+                        echo "<button><i class='fa fa-edit'></i></button>";
+                        echo "<button><i class='fa fa-eye'></i></button>";
+                      echo "</td>";
+                    echo "</tr>";
+
+
+                  }// End of foreach
+
                 ?>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Juan Pérez</td>
-                    <td>1023456789</td>
-                    <td>Administrador</td>
-                    <td>TI</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>María Gómez</td>
-                    <td>1034567890</td>
-                    <td>Analista</td>
-                    <td>Finanzas</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Carlos Ramírez</td>
-                    <td>1045678901</td>
-                    <td>Supervisor</td>
-                    <td>Recursos Humanos</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Ana Torres</td>
-                    <td>1056789012</td>
-                    <td>Usuario</td>
-                    <td>Compras</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Luis Mendoza</td>
-                    <td>1067890123</td>
-                    <td>Analista</td>
-                    <td>Jurídica</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>Laura Díaz</td>
-                    <td>1078901234</td>
-                    <td>Administrador</td>
-                    <td>Sistemas</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>Pedro Castro</td>
-                    <td>1089012345</td>
-                    <td>Usuario</td>
-                    <td>Almacén</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>Sofía Herrera</td>
-                    <td>1090123456</td>
-                    <td>Supervisor</td>
-                    <td>Operaciones</td>
-                    <td>
-                      <button class="btn btn-xs btn-danger">inactivo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>Diego López</td>
-                    <td>1101234567</td>
-                    <td>Analista</td>
-                    <td>TI</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>Camila Rojas</td>
-                    <td>1112345678</td>
-                    <td>Usuario</td>
-                    <td>Comercial</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>11</td>
-                    <td>Andrés Vargas</td>
-                    <td>1123456789</td>
-                    <td>Administrador</td>
-                    <td>Gerencia</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td>Paula Moreno</td>
-                    <td>1134567890</td>
-                    <td>Supervisor</td>
-                    <td>Calidad</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>13</td>
-                    <td>Jorge Sánchez</td>
-                    <td>1145678901</td>
-                    <td>Usuario</td>
-                    <td>Logística</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>14</td>
-                    <td>Natalia Ruiz</td>
-                    <td>1156789012</td>
-                    <td>Analista</td>
-                    <td>Planeación</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>15</td>
-                    <td>Ricardo Ortiz</td>
-                    <td>1167890123</td>
-                    <td>Supervisor</td>
-                    <td>Mantenimiento</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>16</td>
-                    <td>Valentina Gil</td>
-                    <td>1178901234</td>
-                    <td>Administrador</td>
-                    <td>TI</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>17</td>
-                    <td>Fernando Silva</td>
-                    <td>1189012345</td>
-                    <td>Usuario</td>
-                    <td>Atención al Cliente</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>18</td>
-                    <td>Diana Cárdenas</td>
-                    <td>1190123456</td>
-                    <td>Analista</td>
-                    <td>Marketing</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>19</td>
-                    <td>Miguel Ángel León</td>
-                    <td>1201234567</td>
-                    <td>Supervisor</td>
-                    <td>Seguridad</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>20</td>
-                    <td>Daniela Martínez</td>
-                    <td>1212345678</td>
-                    <td>Usuario</td>
-                    <td>Contabilidad</td>
-                    <td>
-                      <button class="btn btn-xs btn-success">activo</button>
-                    </td>
-                    <td>
-                      <button><i class="fa fa-edit"></i></button>
-                      <button><i class="fa fa-eye"></i></button>
-                    </td>
-                  </tr>
+ 
                 </tbody>
 
 
