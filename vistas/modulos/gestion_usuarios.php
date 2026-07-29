@@ -127,7 +127,7 @@
                       echo "<td>".$usuario['dependencia']."</td>";
                       echo "<td>";
                       //boton de estado activo o inactivo
-                      if ($usuario['estado'] == "ACTIVO") {
+                      if ($usuario['estado'] == "Activo") {
                         echo "<button class='btn btn-xs btn-success btnActivarUsuario' data-estadoUsuario = 'Inactivo' data-idUsuario='".$usuario['id_usuario']."'>Activo</button>";
                       }else{
                         echo "<button class='btn btn-xs btn-danger btnActivarUsuario' data-estadoUsuario = 'Activo' data-idUsuario='".$usuario['id_usuario']."'>Inactivo</button>";                        

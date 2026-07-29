@@ -23,5 +23,18 @@ class ModeloUsuarios {
             return $stmt->fetchAll();
         } // End of mdlMostrarUsuarios
 
+    static public function mdlActivarUsuario( $estadoUsuario, $idUsuario) {
+        $stmt = Conexion::conectar()->prepare("UPDATE usuarios SET estado = :estado WHERE id_usuario = :id");
+
+        $stmt->bindParam(":estado", $estadoUsuario, PDO::PARAM_STR);
+        $stmt->bindParam(":id", $idUsuario, PDO::PARAM_STR);
+
+        if ($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }//fin del metosd mdlActivarUsuario
+
 
 } // End of class ModeloUsuarios

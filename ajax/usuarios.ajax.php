@@ -13,7 +13,8 @@ class AjaxUsuarios {
         $estadoUsuario = $this->estadoUsuario;
         $id_usuario = $this->idUsuario;
 
-        $respuesta = ModeloUsuarios::mdlActualizarUsuario( $estadoUsuario, $id_usuario );
+        // $respuesta = ModeloUsuarios::mdlActivarUsuario( $estadoUsuario, $id_usuario );
+        $respuesta = ControladorUsuarios::ctrActivarUsuario( $estadoUsuario, $id_usuario );
 
         echo json_encode($respuesta);
     }
