@@ -9,9 +9,16 @@ class ControladorUsuarios {
         return $respuesta;
     }
 
-    // static public function ctrActivarUsuario($estado, $id) {
-    //     $respuesta = ModeloUsuarios::mdlActivarUsuario( $estado, $id );
-    //     return $respuesta;
-    // }
+    static public function ctrContarUsuarios() {
+        $tabla = "usuarios";
+        $respuesta = ModeloUsuarios::mdlContarUsuarios($tabla);
+        return $respuesta;
+    }
+
+    static public function ctrContarUsuariosActivos() {
+        $tabla = "usuarios";
+        $respuesta = ModeloUsuarios::mdlContarUsuariosActivos($tabla);
+        return $respuesta;
+    }
 
 } // End of class ControladorUsuarios
