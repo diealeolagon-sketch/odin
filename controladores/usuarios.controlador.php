@@ -9,6 +9,11 @@ class ControladorUsuarios {
         return $respuesta;
     }
 
+    static public function ctrActivarUsuario($estadoUsuario, $id_usuario) {
+        $respuesta = ModeloUsuarios::mdlActivarUsuario( $estadoUsuario, $id_usuario);
+        return $respuesta;
+    }
+
     static public function ctrContarUsuarios() {
         $tabla = "usuarios";
         $respuesta = ModeloUsuarios::mdlContarUsuarios($tabla);

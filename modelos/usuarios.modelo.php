@@ -48,5 +48,11 @@ class ModeloUsuarios {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } // End of mdlContarUsuariosActivos
 
+    static public function mdlContarUsuariosInactivos($tabla) {
+        $stmt = Conexion::conectar()->prepare("SELECT COUNT(*) as total FROM $tabla WHERE estado = 'Inactivo'");
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } // End of mdlContarUsuariosInactivos
+
 
 } // End of class ModeloUsuarios

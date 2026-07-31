@@ -2,8 +2,8 @@
   <!-- <div class="content-wrapper"> -->
   <!-- Content Header (Page header) -->
   <?php
-    $totalUsuarios = ControladorUsuarios::ctrContarUsuarios();
-    $totalUsuariosActivos = ControladorUsuarios::ctrContarUsuariosActivos();
+  $totalUsuarios = ControladorUsuarios::ctrContarUsuarios();
+  $totalUsuariosActivos = ControladorUsuarios::ctrContarUsuariosActivos();
   ?>
 
   <section class="content-header">
@@ -118,35 +118,32 @@
                   </tr>
                 </thead>
                 <tbody>
-                <?php 
-                  $respuesta = ControladorUsuarios::ctrMostrarUsuarios();
-                  // var_dump($respuesta);
-                
-                  foreach ($respuesta as $usuario) {
-                    
-                    echo "<tr>";
-                      echo "<td>".$usuario['id_usuario']."</td>";
-                      echo "<td>".$usuario['nombre']."</td>";
-                      echo "<td>".$usuario['num_identificacion']."</td>";
-                      echo "<td>".$usuario['rol']."</td>";
-                      echo "<td>".$usuario['dependencia']."</td>";
-                      echo "<td>";
-                      //boton de estado activo o inactivo
-                      if ($usuario['estado'] == "Activo") {
-                        echo "<button class='btn btn-xs btn-success btnActivarUsuario' data-estadoUsuario = 'Inactivo' data-idUsuario='".$usuario['id_usuario']."'>Activo</button>";
-                      }else{
-                        echo "<button class='btn btn-xs btn-danger btnActivarUsuario' data-estadoUsuario = 'Activo' data-idUsuario='".$usuario['id_usuario']."'>Inactivo</button>";                        
-                      }
+                <?php
+                $respuesta = ControladorUsuarios::ctrMostrarUsuarios();
+                // var_dump($respuesta);
 
-                      echo "</td>";
-                      echo "<td>";
-                        echo "<button><i class='fa fa-edit'></i></button>";
-                        echo "<button><i class='fa fa-eye'></i></button>";
-                      echo "</td>";
-                    echo "</tr>";
+                foreach ($respuesta as $usuario) {
+                  echo '<tr>';
+                  echo '<td>' . $usuario['id_usuario'] . '</td>';
+                  echo '<td>' . $usuario['nombre'] . '</td>';
+                  echo '<td>' . $usuario['num_identificacion'] . '</td>';
+                  echo '<td>' . $usuario['rol'] . '</td>';
+                  echo '<td>' . $usuario['dependencia'] . '</td>';
+                  echo '<td>';
+                  // boton de estado activo o inactivo
+                  if ($usuario['estado'] == 'Activo') {
+                    echo "<button class='btn btn-xs btn-success btnActivarUsuario' data-estadoUsuario = 'Inactivo' data-idUsuario='" . $usuario['id_usuario'] . "'>Activo</button>";
+                  } else {
+                    echo "<button class='btn btn-xs btn-danger btnActivarUsuario' data-estadoUsuario = 'Activo' data-idUsuario='" . $usuario['id_usuario'] . "'>Inactivo</button>";
+                  }
 
-
-                  }// End of foreach
+                  echo '</td>';
+                  echo '<td>';
+                  echo "<button><i class='fa fa-edit'></i></button>";
+                  echo "<button><i class='fa fa-eye'></i></button>";
+                  echo '</td>';
+                  echo '</tr>';
+                }  // End of foreach
 
                 ?>
  
@@ -187,7 +184,7 @@
 
         <div class="modal-body">
           <!-- <p>One fine body&hellip;</p> -->
-          <form id="frmUsuarios" class="form-horizontal method=" post">
+          <form id="frmUsuarios" class="form-horizontal" method="post">
             <div class="card-body">
 
               <!-- select de tipo de documento y numero de identificacion -->
@@ -230,12 +227,18 @@
               <div class="form-group row">
                 <label for="inputRol" class="col-sm-2 col-form-label">Rol</label>
                 <div class="col-sm-10">
-                  <select class="form-control" id="inputRol">
-                    <option value="Administrador">Administrador</option>
-                    <option value="Usuario">Usuario</option>
-                    <option value="Analista">Analista</option>
-                    <option value="Supervisor">Supervisor</option>
-                  </select>
+
+                  <?php
+                  $respuesta = ControladorRoles::ctrMostrarRoles();
+                  // var_dump($respuesta);
+                  echo '<select class="form-control" id="inputRol">';
+                  echo '<option value="">Seleccione</option>';
+                  foreach ($respuesta as $rol) {
+                    echo '<option value="' . $rol['id_rol'] . '">' . $rol['nombre'] . '</option>';
+                  }
+                  echo '</select>';
+
+                  ?>
                 </div>
               </div>
 
@@ -243,15 +246,19 @@
               <div class="form-group row">
                 <label for="inputDependencia" class="col-md-3 col-form-label">Dependencia</label>
                 <div class="col-md-9">
-                  <select class="form-control" id="inputDependencia">
-                    <option value="">Seleccione</option>
-                    <option value="">TI</option>
-                    <option value="">Coordinación</option>
-                    <option value="">Subdirección</option>
-                    <option value="">Bienestar</option>
-                    <option value="">Almacén</option>
-                    <option value="">Archivo</option>
-                  </select>
+
+                <?php
+                $respuesta = ControladorDependencias::ctrMostrarDependencias();
+                // var_dump($respuesta);
+                echo '<select class="form-control" id="inputDependencia">';
+                echo '<option value="">Seleccione</option>';
+                foreach ($respuesta as $dependencia) {
+                  echo '<option value="' . $dependencia['id_dependencia'] . '">' . $dependencia['nombre'] . '</option>';
+                }
+                echo '</select>';
+                ?>
+
+ 
                 </div>
               </div>
             </div>
