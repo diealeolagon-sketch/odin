@@ -1,6 +1,11 @@
   <!-- Content Wrapper. Contains page content -->
   <!-- <div class="content-wrapper"> -->
   <!-- Content Header (Page header) -->
+  <?php
+    $totalUsuarios = ControladorUsuarios::ctrContarUsuarios();
+    $totalUsuariosActivos = ControladorUsuarios::ctrContarUsuariosActivos();
+  ?>
+
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
@@ -29,7 +34,7 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
+              <h3 id="totalUsuarios"><?php echo $totalUsuarios['total']; ?></h3>
               <p>Total registrados</p>
             </div>
             <div class="icon">
@@ -43,8 +48,8 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
-              <p>Roles activos</p>
+              <h3 id="totalUsuariosActivos"><?php echo $totalUsuariosActivos['total']; ?></h3>
+              <p>Usuarios activos</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>

@@ -36,5 +36,17 @@ class ModeloUsuarios {
         }
     }//fin del metosd mdlActivarUsuario
 
+    static public function mdlContarUsuarios($tabla) {
+        $stmt = Conexion::conectar()->prepare("SELECT COUNT(*) as total FROM $tabla");
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } // End of mdlContarUsuarios
+
+    static public function mdlContarUsuariosActivos($tabla) {
+        $stmt = Conexion::conectar()->prepare("SELECT COUNT(*) as total FROM $tabla WHERE estado = 'Activo'");
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } // End of mdlContarUsuariosActivos
+
 
 } // End of class ModeloUsuarios
