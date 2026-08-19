@@ -191,7 +191,7 @@
               <div class="form-group row">
 
                 <div class="col-md-5">
-                  <select class="form-control" id="inputTipoDocumento">
+                  <select class="form-control" id="inputTipoDocumento" name="nuevoTipoDocumento">
                     <option value="">Seleccione</option>
                     <option value="TI">Tarjeta de identidad</option>
                     <option value="CC">Cédula de ciudadanía</option>
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="col-md-7">
-                  <input type="text" class="form-control" id="inputNumeroIdentificacion" placeholder="Número de identificación">
+                  <input type="text" class="form-control" id="inputNumeroIdentificacion" placeholder="Número de identificación" name="nuevoNumeroIdentificacion">
                 </div>
 
               </div>
@@ -211,7 +211,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control" id="inputUsuario" placeholder="Nombre completo">
+                <input type="text" class="form-control" id="inputUsuario" placeholder="Nombre completo" name="nuevoNombre">
               </div>
 
               <!-- input de correo electronico -->
@@ -219,8 +219,25 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                 </div>
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" class="form-control" placeholder="Email" name="nuevoCorreo">
               </div>
+
+              <!-- input de direccion -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Dirección" name="nuevaDireccion">
+                </div>
+
+
+               <!-- input de telefono -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Teléfono" name="nuevoTelefono">
+                </div>
 
 
               <!-- select del rol del usuario -->
@@ -231,7 +248,7 @@
                   <?php
                   $respuesta = ControladorRoles::ctrMostrarRoles();
                   // var_dump($respuesta);
-                  echo '<select class="form-control" id="inputRol">';
+                  echo '<select class="form-control" id="inputRol" name="nuevoRol">';
                   echo '<option value="">Seleccione</option>';
                   foreach ($respuesta as $rol) {
                     echo '<option value="' . $rol['id_rol'] . '">' . $rol['nombre'] . '</option>';
@@ -250,7 +267,7 @@
                 <?php
                 $respuesta = ControladorDependencias::ctrMostrarDependencias();
                 // var_dump($respuesta);
-                echo '<select class="form-control" id="inputDependencia">';
+                echo '<select class="form-control" id="inputDependencia" name="nuevaDependencia">';
                 echo '<option value="">Seleccione</option>';
                 foreach ($respuesta as $dependencia) {
                   echo '<option value="' . $dependencia['id_dependencia'] . '">' . $dependencia['nombre'] . '</option>';
@@ -262,14 +279,25 @@
                 </div>
               </div>
             </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+
+              <?php
+
+              // Include the PHP file for handling the form submission
+              $crearUsuario = new ControladorUsuarios();
+              $crearUsuario->ctrCrearUsuario();
+
+
+              ?>            
+
+
           </form>
 
         </div>
 
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
-        </div>
 
       </div>
       <!-- /.modal-content -->

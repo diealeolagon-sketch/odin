@@ -16,8 +16,17 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="vistas/plugins/fontawesome-free/css/all.min.css">
+
+  <!-- SweetAlert -->
+  <link rel="stylesheet" href="vistas/plugins/sweetalert2/sweetalert2.min.css">
+  <link rel="stylesheet" href="vistas/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/adminlte.min.css">
+
+<!-- PASAR LOS JS ACA PARA PROBAR SA -->
+
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -89,7 +98,7 @@
 <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> 
 <!-- SweetAlert2 para notificaciones -->
 <script src="vistas/plugins/sweetalert2/sweetalert2.min.js"></script>
-<link rel="stylesheet" href="vistas/plugins/sweetalert2/sweetalert2.min.css">
+
 
 <script src="vistas/js/usuarios.js"></script>  
 

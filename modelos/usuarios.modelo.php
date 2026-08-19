@@ -55,4 +55,26 @@ class ModeloUsuarios {
     } // End of mdlContarUsuariosInactivos
 
 
+    static public function mdlCrearUsuario($tabla, $datos) {
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (tipo_identificacion, num_identificacion, nombre, correo, id_rol, id_dependencia, estado, password, direccion, telefono) VALUES (:tipo_documento, :numero_identificacion, :nombre, :correo, :rol, :dependencia, :estado, :password, :direccion, :telefono)");
+        error_log("Datos recibidos en mdlCrearUsuario: " . print_r($datos, true));
+
+        $stmt->bindParam(":tipo_documento", $datos["tipo_documento"], PDO::PARAM_STR);
+        $stmt->bindParam(":numero_identificacion", $datos["numero_identificacion"], PDO::PARAM_STR);
+        $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
+        $stmt->bindParam(":rol", $datos["rol"], PDO::PARAM_INT);
+        $stmt->bindParam(":dependencia", $datos["dependencia"], PDO::PARAM_INT);
+        $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+        $stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
+        $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "error";
+        }
+    } // End of mdlCrearUsuario
+
 } // End of class ModeloUsuarios
