@@ -41,4 +41,8 @@ class ControladorRoles {
         return $respuesta;
     } // End of ctrMostrarRoles
 
+    static public function ctrMostrarRol($idRol) {
+        return ModeloRoles::mdlMostrarRol((int) $idRol);
+    }
+
 } // End of class ControladorRoles

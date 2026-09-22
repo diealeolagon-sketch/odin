@@ -1,6 +1,10 @@
 
 
-    <?php ControladorRoles::ctrGuardarRol(); ?>
+    <?php
+    ControladorRoles::ctrGuardarRol();
+    $idRol = (int) ($_GET['id'] ?? 0);
+    $rolActual = $idRol > 0 ? ControladorRoles::ctrMostrarRol($idRol) : array();
+    ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
 
@@ -101,7 +105,7 @@
                 <!-- Form -->
 
                 <form method="POST" action="roles_permisosForm">
-                    <input type="hidden" name="id_rol" value="<?php echo (int) ($_GET['id'] ?? 0); ?>">
+                    <input type="hidden" name="id_rol" value="<?php echo $idRol; ?>">
 
 
                     <div class="card-body">
@@ -125,6 +129,7 @@
                                 class="form-control"
                                 name="nombre"
                                 placeholder="Ejemplo: Administrador"
+                                value="<?php echo htmlspecialchars($rolActual['nombre'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                 required>
 
 
@@ -154,27 +159,27 @@
                                 required>
 
 
-                                <option selected disabled>
+                                <option disabled <?php echo empty($rolActual['rol']) ? 'selected' : ''; ?>>
                                     Seleccione un tipo de rol
                                 </option>
 
 
-                                <option value="admin">
+                                <option value="admin" <?php echo ($rolActual['rol'] ?? '') === 'admin' ? 'selected' : ''; ?>>
                                     Administrador
                                 </option>
 
 
-                                <option value="usuario">
+                                <option value="usuario" <?php echo ($rolActual['rol'] ?? '') === 'usuario' ? 'selected' : ''; ?>>
                                     Usuario
                                 </option>
 
 
-                                <option value="supervisor">
+                                <option value="supervisor" <?php echo ($rolActual['rol'] ?? '') === 'supervisor' ? 'selected' : ''; ?>>
                                     Supervisor
                                 </option>
 
 
-                                <option value="invitado">
+                                <option value="invitado" <?php echo ($rolActual['rol'] ?? '') === 'invitado' ? 'selected' : ''; ?>>
                                     Invitado
                                 </option>
 
@@ -187,7 +192,7 @@
 
                         <div class="form-group">
                             <label>Nivel de acceso</label>
-                            <input type="number" class="form-control" name="nivel_acceso" min="1" value="1" required>
+                            <input type="number" class="form-control" name="nivel_acceso" min="1" value="<?php echo (int) ($rolActual['nivel_acceso'] ?? 1); ?>" required>
                         </div>
 
 
@@ -243,19 +248,19 @@
 
 
 
-                                <option selected disabled>
+                                <option disabled <?php echo empty($rolActual['estado']) ? 'selected' : ''; ?>>
                                     Seleccione
                                 </option>
 
 
 
-                                <option value="Activo">
+                                <option value="Activo" <?php echo ($rolActual['estado'] ?? '') === 'Activo' ? 'selected' : ''; ?>>
                                     Activo
                                 </option>
 
 
 
-                                <option value="Inactivo">
+                                <option value="Inactivo" <?php echo ($rolActual['estado'] ?? '') === 'Inactivo' ? 'selected' : ''; ?>>
                                     Inactivo
                                 </option>
 

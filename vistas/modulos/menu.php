@@ -36,6 +36,7 @@
                   </li>
 
                   <!-- ******************************* CONTROL DE ACCESO ******************************* -->
+                  <?php if (ControladorAuth::ctrTienePermiso('admin_usuarios')): ?>
                   <li class="nav-item">
                       <a href="#" class="nav-link">
                           <i class="nav-icon fas fa-users"></i>
@@ -59,9 +60,11 @@
                           </li>
                       </ul>
                   </li>
+                  <?php endif; ?>
 
                   <!-- ******************************* DEPENDENCIAS ******************************* -->
 
+                  <?php if (ControladorAuth::ctrTienePermiso('admin_dependencias')): ?>
                   <li class="nav-item">
                       <a href="dependencias" class="nav-link">
                           <i class="nav-icon fas fa-building"></i>
@@ -70,9 +73,11 @@
                           </p>
                       </a>
                   </li>
+                  <?php endif; ?>
 
                   <!-- ******************************* RADICACION ******************************* -->
 
+                  <?php if (ControladorAuth::ctrTienePermiso('crear_radicado')): ?>
                   <li class="nav-item">
                       <a href="radicacion" class="nav-link">
                           <i class="nav-icon fas fa-file"></i>
@@ -81,8 +86,10 @@
                           </p>
                       </a>
                   </li>
+                  <?php endif; ?>
 
                   <!-- ******************************* GESTION DOCUMENTAL ******************************* -->
+                  <?php if (ControladorAuth::ctrTienePermiso('ver_radicados') || ControladorAuth::ctrTienePermiso('admin_ccd')): ?>
                   <li class="nav-item">
                       <a href="#" class="nav-link">
                           <i class="nav-icon fas fa-eye"></i>
@@ -93,32 +100,40 @@
                       </a>
 
                       <ul class="nav nav-treeview">
+                          <?php if (ControladorAuth::ctrTienePermiso('ver_radicados')): ?>
                           <li class="nav-item">
                               <a href="consulta_seguimiento" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Consulta y seguimiento</p>
                               </a>
                           </li>
+                          <?php endif; ?>
 
+                          <?php if (ControladorAuth::ctrTienePermiso('admin_ccd')): ?>
                           <li class="nav-item">
                               <a href="series_documentales" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Series documentales</p>
                               </a>
                           </li>
+                          <?php endif; ?>
 
+                          <?php if (ControladorAuth::ctrTienePermiso('admin_ccd')): ?>
                           <li class="nav-item">
                               <a href="subseries_documentales" class="nav-link">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Subseries documentales</p>
                               </a>
-                          </li>                          
+                          </li>
+                          <?php endif; ?>
 
                       </ul>
                   </li>
+                  <?php endif; ?>
 
                   <!-- ******************************* TRAMITES ******************************* -->
 
+                  <?php if (ControladorAuth::ctrTienePermiso('ver_tramites')): ?>
                   <li class="nav-item">
                       <a href="gestion_tramites" class="nav-link">
                           <i class="nav-icon fas fa-handshake"></i>
@@ -126,10 +141,12 @@
                               Gestión de trámites
                           </p>
                       </a>
-                  </li> 
-                  
+                  </li>
+                  <?php endif; ?>
+
                   <!-- ******************************* REPORTES ******************************* -->
 
+                  <?php if (ControladorAuth::ctrTienePermiso('ver_reportes')): ?>
                   <li class="nav-item">
                       <a href="reportes" class="nav-link">
                           <i class="nav-icon fas fa-chart-bar"></i>
@@ -137,7 +154,8 @@
                               Reportes y estadísticas
                           </p>
                       </a>
-                  </li>                  
+                  </li>
+                  <?php endif; ?>
 
 
 

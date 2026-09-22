@@ -61,4 +61,11 @@ class ModeloRoles {
 
     } // End of mdlMostrarRoles
 
+    static public function mdlMostrarRol($idRol) {
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM roles WHERE id_rol = :id_rol LIMIT 1");
+        $stmt->bindValue(":id_rol", $idRol, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
 } // End of class ModeloRoles

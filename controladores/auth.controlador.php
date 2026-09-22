@@ -29,7 +29,7 @@ class ControladorAuth {
     }
 
     static private function verificarPassword($password, $almacenada) {
-        if (password_get_info($almacenada)["algo"] !== 0) {
+        if (!empty(password_get_info($almacenada)["algo"])) {
             return password_verify($password, $almacenada);
         }
 

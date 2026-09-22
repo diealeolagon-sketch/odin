@@ -32,6 +32,10 @@ $permisosRuta = array(
 	"dependencias" => "admin_dependencias",
 	"dependenciasForm" => "admin_dependencias",
 	"radicacion" => "crear_radicado",
+	"consulta_seguimiento" => "ver_radicados",
+	"series_documentales" => "admin_ccd",
+	"subseries_documentales" => "admin_ccd",
+	"gestion_tramites" => "ver_tramites",
 	"reportes" => "ver_reportes"
 );
 if (isset($_GET["ruta"], $permisosRuta[$_GET["ruta"]]) && !ControladorAuth::ctrTienePermiso($permisosRuta[$_GET["ruta"]])) {

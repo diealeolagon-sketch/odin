@@ -65,7 +65,8 @@ INSERT IGNORE INTO permisos (nombre, descripcion, modulo, accion) VALUES
 ('admin_usuarios', 'Gestionar usuarios y roles', 'usuarios', 'admin'),
 ('ver_reportes', 'Acceder a reportes y estadísticas', 'reportes', 'ver'),
 ('admin_dependencias', 'Gestionar dependencias', 'dependencias', 'admin'),
-('admin_ccd', 'Gestionar cuadro de clasificación documental', 'ccd', 'admin');
+('admin_ccd', 'Gestionar cuadro de clasificación documental', 'ccd', 'admin'),
+('ver_tramites', 'Acceder a la gestión de trámites', 'tramites', 'ver');
 
 INSERT IGNORE INTO roles (id_rol, nivel_acceso, nombre, estado, rol)
 VALUES (1, 10, 'Administrador', 'Activo', 'admin');
