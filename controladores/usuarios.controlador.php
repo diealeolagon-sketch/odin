@@ -39,7 +39,7 @@ class ControladorUsuarios {
                 "direccion" => $_POST["nuevaDireccion"],
                 "telefono" => $_POST["nuevoTelefono"],
                 "estado" => "Activo",
-                "password" => $_POST["nuevoNumeroIdentificacion"]
+                "password" => password_hash($_POST["nuevoNumeroIdentificacion"], PASSWORD_DEFAULT)
             );
 
             $respuesta = ModeloUsuarios::mdlCrearUsuario($tabla, $datos);

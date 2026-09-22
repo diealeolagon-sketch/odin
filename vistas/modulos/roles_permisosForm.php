@@ -1,5 +1,6 @@
 
 
+    <?php ControladorRoles::ctrGuardarRol(); ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
 
@@ -29,7 +30,7 @@
 
                         <li class="breadcrumb-item">
 
-                            <a href="roles">
+                            <a href="roles_permisos">
 
                                 <button type="button" 
                                         class="btn btn-secondary">
@@ -99,7 +100,8 @@
 
                 <!-- Form -->
 
-                <form method="POST" action="guardarRol">
+                <form method="POST" action="roles_permisosForm">
+                    <input type="hidden" name="id_rol" value="<?php echo (int) ($_GET['id'] ?? 0); ?>">
 
 
                     <div class="card-body">
@@ -147,7 +149,7 @@
 
                             <select 
                                 class="form-control select2"
-                                name="tipo"
+                                name="rol"
                                 style="width:100%;"
                                 required>
 
@@ -157,22 +159,22 @@
                                 </option>
 
 
-                                <option value="Administrador">
+                                <option value="admin">
                                     Administrador
                                 </option>
 
 
-                                <option value="Usuario">
+                                <option value="usuario">
                                     Usuario
                                 </option>
 
 
-                                <option value="Supervisor">
+                                <option value="supervisor">
                                     Supervisor
                                 </option>
 
 
-                                <option value="Invitado">
+                                <option value="invitado">
                                     Invitado
                                 </option>
 
@@ -181,6 +183,11 @@
                             </select>
 
 
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nivel de acceso</label>
+                            <input type="number" class="form-control" name="nivel_acceso" min="1" value="1" required>
                         </div>
 
 
@@ -293,7 +300,7 @@
 
 
 
-                        <a href="roles"
+                        <a href="roles_permisos"
                            class="btn btn-danger">
 
 

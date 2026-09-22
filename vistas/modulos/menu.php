@@ -13,13 +13,14 @@
                   <img src="vistas/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                  <a href="#" class="d-block">Administrador</a>
+                  <a href="#" class="d-block"><?php echo htmlspecialchars($_SESSION['usuario']['nombre'] ?? 'Usuario', ENT_QUOTES, 'UTF-8'); ?></a>
               </div>
           </div>
 
           <!-- Sidebar Menu -->
           <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <li class="nav-item"><a href="salir" class="nav-link"><i class="nav-icon fas fa-sign-out-alt"></i><p>Cerrar sesión</p></a></li>
                   <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
